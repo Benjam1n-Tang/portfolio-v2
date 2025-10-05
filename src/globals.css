@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -9,14 +6,14 @@
 
 
 @theme inline {
-  --font-electrolize: "Electrolize", sans-serif;
-  --font-sans: "DM Sans", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-electrolize: var(--font-electrolize)
+  --font-sans: var(--font-sans)
+  --font-mono: var(--font-mono)
+  --font-figtree: var(--font-figtree)
+
   --color-accent-background: var(--accent-background);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono); */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -55,7 +52,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #DFF2FE;
   --accent-background: #053345;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -149,7 +146,7 @@
   }
 
   .nav_link {
-    @apply text-sm px-6 font-mono
+    @apply text-sm px-6 font-mono font-medium
   }
 
   .hamburger {
@@ -157,7 +154,7 @@
   }
 
   .page {
-    @apply max-w-480 mx-auto h-[100dvh] lg:py-18 py-16 px-6 lg:px-10
+    @apply max-w-480 mx-auto h-[100dvh] lg:py-18 py-16 px-6 lg:px-10 bg-background
   }
 
 }

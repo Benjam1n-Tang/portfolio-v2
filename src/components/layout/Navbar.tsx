@@ -10,23 +10,25 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../ui/drawer";
-import { resumeLink } from "@/constants";
+import { resumeLink, navLinks } from "@/constants";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const [active, setActive] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setActive(hash);
+    }
+  }, []);
 
   const handleResumeDownload = () => {
-  window.open(
-    `${resumeLink}`,
-    "_blank"
-  );
-};
+    window.open(`${resumeLink}`, "_blank");
+    setIsOpen(false);
+  };
 
   const isDesktop = useMediaQuery("(min-width: 1024px)");
 
@@ -40,7 +42,14 @@ const Navbar = () => {
           <>
             <div className="h-12 justify-center items-center lg:flex hidden ">
               {navLinks.map((link) => (
-                <Link key={link.name} href={link.href} className="nav_link">
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`nav_link ${
+                    active === link.href ? "text-secondary" : ""
+                  }`}
+                  onClick={() => setActive(link.href)}
+                >
                   [ {link.name} ]
                 </Link>
               ))}
@@ -49,13 +58,13 @@ const Navbar = () => {
               variant="secondary"
               size="lg"
               onClick={handleResumeDownload}
-              className="hidden lg:flex font-mono"
+              className="hidden lg:flex font-mono font-medium"
             >
               Resume
             </Button>{" "}
           </>
         ) : (
-          <Drawer direction="right">
+          <Drawer direction="right" open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger>
               <MenuIcon className="hamburger" size={32} />
             </DrawerTrigger>
@@ -72,7 +81,15 @@ const Navbar = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="border-b-1 border-neutral-300 py-4"
+                    className={`border-b-1 border-neutral-300 py-4 ${
+                      active === link.href
+                        ? "text-secondary border-secondary"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      setActive(link.href);
+                      setIsOpen(false);
+                    }}
                   >
                     {" "}
                     {link.name}{" "}
