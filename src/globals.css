@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -8,11 +10,13 @@
 
 @theme inline {
   --font-electrolize: "Electrolize", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --color-accent-background: var(--accent-background);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono); */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -25,7 +29,7 @@
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
+  --color-chart-1: var(--chart-1)@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');;
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -123,6 +127,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -134,19 +141,23 @@
   }
 
   .navbar {
-    @apply max-w-480 px-6 py-3 mx-auto flex justify-between items-center
+    @apply max-w-480 px-6 lg:px-10 py-3 mx-auto flex justify-between items-center
   }
 
   .nav_logo {
-    @apply font-electrolize text-2xl h-10 text-center flex items-center font-medium
+    @apply font-electrolize text-2xl h-10 text-center flex items-center font-medium hover:cursor-pointer
   }
 
   .nav_link {
-    @apply text-sm px-6
+    @apply text-sm px-6 font-mono
   }
 
   .hamburger {
     @apply lg:hidden block text-secondary hover:cursor-pointer
+  }
+
+  .page {
+    @apply max-w-480 mx-auto h-[100dvh] lg:py-18 py-16 px-6 lg:px-10
   }
 
 }
