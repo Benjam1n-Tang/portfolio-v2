@@ -6,10 +6,10 @@
 
 
 @theme inline {
-  --font-electrolize: var(--font-electrolize)
-  --font-sans: var(--font-sans)
-  --font-mono: var(--font-mono)
-  --font-figtree: var(--font-figtree)
+  --font-electrolize: var(--font-electrolize);
+  --font-inter: var(--font-inter);
+  --font-red-hat-display: var(--font-red-hat-display);
+  --font-mono: var(--font-mono);
 
   --color-accent-background: var(--accent-background);
   --color-background: var(--background);
@@ -59,7 +59,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #052F4A;
+  --primary: #001E43;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: #A4F4CF;
   --secondary-foreground: oklch(0.205 0 0);
