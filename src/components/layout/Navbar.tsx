@@ -58,7 +58,7 @@ const Navbar = () => {
               variant="secondary"
               size="lg"
               onClick={handleResumeDownload}
-              className="hidden lg:flex font-mono font-medium"
+              className="hidden lg:flex font-mono font-medium rounded-sm"
             >
               Resume
             </Button>{" "}
@@ -68,7 +68,7 @@ const Navbar = () => {
             <DrawerTrigger>
               <MenuIcon className="hamburger" size={32} />
             </DrawerTrigger>
-            <DrawerContent className="bg-sky-950 border-none outline-none  focus:outline-none rounded-l-sm overflow-y-scroll">
+            <DrawerContent className="bg-primary border-none outline-none  focus:outline-none rounded-l-sm overflow-y-scroll">
               <DrawerClose className="navbar w-full justify-end">
                 <X className="hamburger h-12" size={36} />
               </DrawerClose>
@@ -76,7 +76,7 @@ const Navbar = () => {
               <DrawerDescription className="hidden">
                 A Navbar for smaller screens
               </DrawerDescription>
-              <div className="flex flex-col font-sans text-primary-foreground font-medium px-6 py-2 gap-6 text-lg">
+              <div className="flex flex-col font-mono text-primary-foreground font-medium px-6 py-2 gap-6 text-lg">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
@@ -91,8 +91,8 @@ const Navbar = () => {
                       setIsOpen(false);
                     }}
                   >
-                    {" "}
-                    {link.name}{" "}
+                    {""}
+                    {link.name}{""}
                   </Link>
                 ))}
               </div>
@@ -101,7 +101,7 @@ const Navbar = () => {
                   variant="secondary"
                   size="lg"
                   onClick={handleResumeDownload}
-                  className="w-full font-sans"
+                  className="w-full font-mono rounded-sm"
                 >
                   Resume
                 </Button>

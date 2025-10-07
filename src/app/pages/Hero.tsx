@@ -7,10 +7,10 @@ const Hero = () => {
         <h3 className="text-secondary pl-2 font-mono text-3xl">
           Hello, I&apos;m
         </h3>
-        <h1 className="uppercase text-[12rem] text-primary-foreground font-red-hat-display font-bold leading-none tracking-tighter text-center">
+        <h1 className="uppercase text-primary-foreground font-inter-tight font-extrabold leading-none text-center text-[clamp(42px,-3.0704225352px+9.014084507vw,170px)]">
           Benjamin Tang
         </h1>
-        <h3 className="text-5xl text-primary-foreground font-mono leading-20 tracking-[0.2rem] text-center">Computer Science Undergraduate</h3>
+        <h3 className="text-4xl text-primary-foreground font-mono tracking-[0.2rem] text-center leading-none">Computer Science Undergraduate</h3>
       </div>
     </div>
   );

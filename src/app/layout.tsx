@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Electrolize, Inter, Red_Hat_Display, JetBrains_Mono } from "next/font/google";
+import { Electrolize, Inter, Inter_Tight, Red_Hat_Display, JetBrains_Mono } from "next/font/google";
 import "../globals.css"
 import Navbar from "@/components/layout/Navbar";
 
@@ -12,6 +12,13 @@ const electrolize = Electrolize({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const intertight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const redhatdisplay = Red_Hat_Display({
@@ -24,7 +31,7 @@ const redhatdisplay = Red_Hat_Display({
 const mono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 })
 
 export const metadata: Metadata = {
@@ -40,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${electrolize.variable} ${inter.variable} ${redhatdisplay.variable} ${mono.variable} antialiased`}
+        className={`${electrolize.variable} ${inter.variable} ${intertight.variable} ${redhatdisplay.variable} ${mono.variable} antialiased`}
       >
         <Navbar />
         {children}

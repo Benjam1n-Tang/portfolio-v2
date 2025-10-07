@@ -8,6 +8,7 @@
 @theme inline {
   --font-electrolize: var(--font-electrolize);
   --font-inter: var(--font-inter);
+  --font-inter-tight: var(--font-inter-tight);
   --font-red-hat-display: var(--font-red-hat-display);
   --font-mono: var(--font-mono);
 
@@ -60,9 +61,9 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #001E43;
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: #A4F4CF;
-  --secondary-foreground: oklch(0.205 0 0);
+  --primary-foreground: #daecfe;
+  --secondary: #00cba4;
+  --secondary-foreground: #09111b;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -155,6 +156,10 @@
 
   .page {
     @apply max-w-480 mx-auto h-[100dvh] lg:py-18 py-16 px-6 lg:px-10 bg-background
+  }
+
+  .page_header {
+    @apply font-inter-tight text-secondary-foreground font-bold uppercase text-6xl text-center; 
   }
 
 }
