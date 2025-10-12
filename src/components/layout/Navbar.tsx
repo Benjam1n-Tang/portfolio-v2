@@ -35,30 +35,30 @@ const Navbar = () => {
   return (
     <header className="header">
       <nav className="navbar">
-        <a className="nav_logo" href={"/"}>
+        <Link className="nav_logo" href={"/"}>
           BEN.TANG
-        </a>
+        </Link>
         {isDesktop ? (
           <>
-            <div className="h-12 justify-center items-center lg:flex hidden ">
+            <div className="h-12 justify-center items-center lg:flex hidden">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={`nav_link ${
-                    active === link.href ? "text-secondary" : ""
+                    active === link.href
+                      ? "underline underline-offset-5 decoration-2"
+                      : ""
                   }`}
                   onClick={() => setActive(link.href)}
                 >
-                  [ {link.name} ]
+                  {link.name}
                 </Link>
               ))}
             </div>
             <Button
-              variant="secondary"
-              size="lg"
               onClick={handleResumeDownload}
-              className="hidden lg:flex font-mono font-medium rounded-sm"
+              className="hidden lg:flex rounded-none"
             >
               Resume
             </Button>{" "}
@@ -68,23 +68,21 @@ const Navbar = () => {
             <DrawerTrigger>
               <MenuIcon className="hamburger" size={32} />
             </DrawerTrigger>
-            <DrawerContent className="bg-primary border-none outline-none  focus:outline-none rounded-l-sm overflow-y-scroll">
+            <DrawerContent className="bg-primary border-none outline-none focus:outline-none rounded-l-sm overflow-y-auto overflow-x-hidden">
               <DrawerClose className="navbar w-full justify-end">
-                <X className="hamburger h-12" size={36} />
+                <X className="hamburger h-12 text-secondary" size={36} />
               </DrawerClose>
               <DrawerTitle className="hidden">Hamburger Navbar</DrawerTitle>
               <DrawerDescription className="hidden">
                 A Navbar for smaller screens
               </DrawerDescription>
-              <div className="flex flex-col font-mono text-primary-foreground font-medium px-6 py-2 gap-6 text-lg">
+              <div className="flex flex-col uppercase tracking-wider font-poppins text-primary-foreground px-6 py-2 gap-6 text-lg">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
                     className={`border-b-1 border-neutral-300 py-4 ${
-                      active === link.href
-                        ? "text-secondary border-secondary"
-                        : ""
+                      active === link.href ? "" : ""
                     }`}
                     onClick={() => {
                       setActive(link.href);
@@ -92,16 +90,16 @@ const Navbar = () => {
                     }}
                   >
                     {""}
-                    {link.name}{""}
+                    {link.name}
+                    {""}
                   </Link>
                 ))}
               </div>
               <div className="px-6 pt-10">
                 <Button
                   variant="secondary"
-                  size="lg"
                   onClick={handleResumeDownload}
-                  className="w-full font-mono rounded-sm"
+                  className="w-full rounded-none"
                 >
                   Resume
                 </Button>

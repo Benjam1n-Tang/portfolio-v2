@@ -26,17 +26,17 @@ const ContactInput = ({
   ...props
 }: ContactInputProps) => {
   return (
-    <div className={cn("flex flex-col gap-1 lg:w-1/3 w-full", wrapperClassName)}>
-      <label className="font-inter-tight uppercase">{label}</label>
+    <div className={cn("flex flex-col gap-1 lg:w-150 w-full", wrapperClassName)}>
+      <label className="font-poppins tracking-wider uppercase">{label}</label>
 
       {variant === "1" ? (
         <Input
-          className={cn("border-black font-mono rounded-none", className)}
+          className={cn("border-black font-poppins tracking-wide rounded-none", className)}
           {...(props as React.ComponentProps<"input">)}
         />
       ) : (
         <Textarea
-          className={cn("border-black font-mono h-32 rounded-none", className)}
+          className={cn("border-black font-poppins tracking-wide h-32 rounded-none resize-none", className)}
           {...(props as React.ComponentProps<"textarea">)}
         />
       )}

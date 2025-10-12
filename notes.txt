@@ -1,0 +1,5 @@
+- Change The Nav Text Colors Based on the Background
+- Add a tile repeated Background
+- Change the way the mouse looks
+- Animations/Transitions
+- Fish Logo in the Logo

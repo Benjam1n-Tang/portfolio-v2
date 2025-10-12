@@ -10,6 +10,4 @@ export {
     Projects,
     Skills,
     Contact
-
-
 }
